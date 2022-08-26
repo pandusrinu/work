@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>index page</title>
+    <style>
+        *{
+        margin:0;
+        padding:0;
+        }
+        body{
+        background:skyblue;
+        font-family:tahoma;
+        }
+        h1{
+      background:orange;
+      color:white;
+
+        }
+        table{
+         border:2px solid green;
+        padding:40px 40px;
+        background:blue;
+        margin-bottom:30px;
+        color:white;
+        border-radius:20px;
+
+        }
+
+        a{
+        background:red;
+        text-decoration:none;
+        color:white;
+        }
+        a:hover{
+        background:yellow;
+        curser:pointer;
+        color:green;
+        }
+        button{
+          background:blue;
+     width:250px;
+     text-align:center;
+	 color:white;
+	 margin-top:15px;
+	 padding:10px 90px 10px 90px;
+	 border-radius:20px;
+	 border:none;
+	 outline:none;
+	 font-size:20px;
+	 cursor:pointer;
+        }
+      button:hover{
+      background:red;
+      }
+
+    </style>
+</head>
+<center>
+<body>
+<h1>Employee details table</h1><hr/><hr/><br/><br/>
+<table border="2px">
+    <tr>
+        <th>Id_No</th>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Mobile_No</th>
+        <th>Emp_Role</th>
+        <th>Actions</th>
+    </tr>
+{% for i in emp_data %}
+    <tr>
+        <td>{{i.Id_No}}</td>
+        <td>{{i.Name}}</td>
+        <td>{{i.Address}}</td>
+        <td>{{i.Mobile_No}}</td>
+        <td>{{i.Emp_Role}}</td>
+             <td>
+             <a href="/edit/{{i.id}}">Edit</a> &nbsp   <a href="/delete/{{i.id}}"> Delete </a>
+        </td>
+
+    </tr>
+{% endfor %}
+</table><br/><br/>
+<a href="/tirupati/"><button>CREATE</button></a><br><br>
+<a href="/logout"><button type="button">LOGOUT</button></a><br/><br/>
+ <!-- <a href="/main/"><button type="button">Back To Menu</button></a>-->
+
+
+
+</body>
+</center>
+</html>
